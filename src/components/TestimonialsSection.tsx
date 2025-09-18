@@ -22,7 +22,7 @@ export function TestimonialsSection() {
   }];
   return <section id="testimonials" className="py-20 bg-white w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Trusted by businesses worldwide
           </h2>
@@ -32,7 +32,7 @@ export function TestimonialsSection() {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => <div key={index} className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+          {testimonials.map((testimonial, index) => <div key={index} className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm animate-fade-in-up hover:transform hover:scale-105 transition-all duration-300" style={{animationDelay: `${index * 0.2}s`}}>
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => <StarIcon key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`} fill={i < testimonial.rating ? 'currentColor' : 'none'} />)}
               </div>
@@ -50,7 +50,7 @@ export function TestimonialsSection() {
               </div>
             </div>)}
         </div>
-        <div className="mt-16 bg-blue-50 rounded-2xl p-10 md:p-16">
+        <div className="mt-16 bg-blue-50 rounded-2xl p-10 md:p-16 animate-fade-in-up hover:transform hover:scale-105 transition-all duration-500">
           <div className="md:flex md:items-center md:justify-between">
             <div className="md:w-2/3 mb-8 md:mb-0">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -62,7 +62,7 @@ export function TestimonialsSection() {
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center md:justify-end">
-              <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700">
+              <button className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-110 hover:shadow-lg">
                 Start your free trial
               </button>
             </div>

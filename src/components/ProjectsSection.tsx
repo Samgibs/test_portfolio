@@ -79,25 +79,25 @@ export function ProjectsSection() {
   const filteredProjects = activeFilter === 'All' ? projects : activeFilter === 'Featured' ? projects.filter(project => project.featured) : projects.filter(project => project.tags.includes(activeFilter));
   return <section id="projects" className="py-20 bg-white w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             My Projects
           </h2>
-          <div className="h-1 w-20 bg-green-600 mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-green-600 mx-auto mb-6 animate-expand-width"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             A showcase of my Android development work, from concept to Play
             Store.
           </p>
         </div>
         <div className="flex justify-center flex-wrap gap-2 mb-12">
-          {filters.map(filter => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-4 py-2 rounded-full text-sm font-medium ${activeFilter === filter ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
+          {filters.map((filter, index) => <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 animate-fade-in-up hover:scale-110 ${activeFilter === filter ? 'bg-green-600 text-white shadow-lg' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'}`} style={{animationDelay: `${index * 0.1}s`}}>
               {filter}
             </button>)}
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-              <div className="relative">
-                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+          {filteredProjects.map((project, index) => <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all duration-500 animate-fade-in-up hover:transform hover:scale-105" style={{animationDelay: `${index * 0.1}s`}}>
+              <div className="relative overflow-hidden">
+                <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <h3 className="text-white text-xl font-bold p-4">
                     {project.title}
@@ -113,14 +113,14 @@ export function ProjectsSection() {
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-2">
-                    <a href={project.links.github} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200" title="View on GitHub">
+                    <a href={project.links.github} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-300 hover:scale-110" title="View on GitHub">
                       <GithubIcon className="h-5 w-5 text-gray-700" />
                     </a>
-                    <a href={project.links.demo} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200" title="View Demo">
+                    <a href={project.links.demo} className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-300 hover:scale-110" title="View Demo">
                       <ExternalLinkIcon className="h-5 w-5 text-gray-700" />
                     </a>
                   </div>
-                  <a href={project.links.playstore} className="text-green-600 hover:text-green-800 text-sm font-medium flex items-center">
+                  <a href={project.links.playstore} className="text-green-600 hover:text-green-800 text-sm font-medium flex items-center transition-all duration-300 hover:scale-105">
                     View on Google Play
                     <svg className="h-4 w-4 ml-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15C4.34 1.91 4.91 2 5.33 2.33L20.4 12L5.33 21.67C4.91 22 4.34 22.09 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

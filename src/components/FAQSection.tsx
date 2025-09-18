@@ -26,7 +26,7 @@ export function FAQSection() {
   };
   return <section id="faq" className="py-20 bg-gray-50 w-full">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Frequently asked questions
           </h2>
@@ -36,21 +36,23 @@ export function FAQSection() {
           </p>
         </div>
         <div className="space-y-4">
-          {faqs.map((faq, index) => <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <button onClick={() => toggleFAQ(index)} className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          {faqs.map((faq, index) => <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-in-up hover:shadow-lg transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
+              <button onClick={() => toggleFAQ(index)} className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none hover:bg-gray-50 transition-colors duration-300">
                 <span className="text-lg font-medium text-gray-900">
                   {faq.question}
                 </span>
-                {openIndex === index ? <ChevronUpIcon className="h-5 w-5 text-gray-500" /> : <ChevronDownIcon className="h-5 w-5 text-gray-500" />}
+                <div className={`transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
+                  {openIndex === index ? <ChevronUpIcon className="h-5 w-5 text-gray-500" /> : <ChevronDownIcon className="h-5 w-5 text-gray-500" />}
+                </div>
               </button>
-              {openIndex === index && <div className="px-6 pb-4">
+              {openIndex === index && <div className="px-6 pb-4 animate-fade-in-up">
                   <p className="text-gray-600">{faq.answer}</p>
                 </div>}
             </div>)}
         </div>
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center animate-fade-in-up">
           <p className="text-gray-600 mb-4">Still have questions?</p>
-          <button className="px-6 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-600 hover:bg-blue-50">
+          <button className="px-6 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-600 hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-lg">
             Contact our sales team
           </button>
         </div>

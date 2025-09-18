@@ -36,11 +36,11 @@ export function ExperienceSection() {
   }];
   return <section id="experience" className="py-20 bg-gray-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Work Experience
           </h2>
-          <div className="h-1 w-20 bg-green-600 mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-green-600 mx-auto mb-6 animate-expand-width"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             My professional journey in Android development.
           </p>
@@ -49,13 +49,13 @@ export function ExperienceSection() {
           {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform md:-translate-x-0.5"></div>
           {/* Experience items */}
-          {experiences.map((exp, index) => <div key={index} className="mb-12 relative">
+          {experiences.map((exp, index) => <div key={index} className="mb-12 relative animate-fade-in-up" style={{animationDelay: `${index * 0.3}s`}}>
               <div className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-green-600 border-4 border-white transform md:-translate-x-2 mt-6"></div>
+                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-green-600 border-4 border-white transform md:-translate-x-2 mt-6 animate-pulse"></div>
                 {/* Content */}
                 <div className="md:w-1/2 ml-12 md:ml-0 md:px-8">
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
                     <div className="flex items-center mb-2">
                       <BriefcaseIcon className="h-5 w-5 text-green-600 mr-2" />
                       <h3 className="text-xl font-bold text-gray-900">
@@ -88,11 +88,11 @@ export function ExperienceSection() {
         </div>
         {/* Education Section */}
         <div className="mt-20">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center animate-fade-in-up">
             Education
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {education.map((edu, index) => <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+            {education.map((edu, index) => <div key={index} className="bg-white p-6 rounded-lg shadow-sm animate-fade-in-up hover:transform hover:scale-105 transition-all duration-300" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="flex items-center mb-2">
                   <GraduationCapIcon className="h-5 w-5 text-green-600 mr-2" />
                   <h3 className="text-xl font-bold text-gray-900">

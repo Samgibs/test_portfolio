@@ -26,22 +26,22 @@ export function PricingSection() {
   }];
   return <section id="pricing" className="py-20 bg-gray-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Pricing plans for businesses of all sizes
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Choose the perfect plan for your multi-tenant eCommerce platform.
           </p>
-          <div className="flex items-center justify-center mb-8">
-            <span className={`mr-3 ${isAnnual ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
+          <div className="flex items-center justify-center mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <span className={`mr-3 transition-colors duration-300 ${isAnnual ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
               Annual
             </span>
-            <button onClick={() => setIsAnnual(!isAnnual)} className="relative inline-flex h-6 w-12 items-center rounded-full">
-              <span className={`absolute h-5 w-5 transform rounded-full transition ${isAnnual ? 'translate-x-1 bg-blue-600' : 'translate-x-6 bg-gray-400'}`} />
-              <span className={`absolute inset-0 rounded-full ${isAnnual ? 'bg-blue-200' : 'bg-gray-200'}`} />
+            <button onClick={() => setIsAnnual(!isAnnual)} className="relative inline-flex h-6 w-12 items-center rounded-full hover:scale-110 transition-all duration-300">
+              <span className={`absolute h-5 w-5 transform rounded-full transition-all duration-300 ${isAnnual ? 'translate-x-1 bg-blue-600' : 'translate-x-6 bg-gray-400'}`} />
+              <span className={`absolute inset-0 rounded-full transition-colors duration-300 ${isAnnual ? 'bg-blue-200' : 'bg-gray-200'}`} />
             </button>
-            <span className={`ml-3 ${!isAnnual ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
+            <span className={`ml-3 transition-colors duration-300 ${!isAnnual ? 'text-gray-900 font-medium' : 'text-gray-500'}`}>
               Monthly
             </span>
           </div>
@@ -50,7 +50,7 @@ export function PricingSection() {
             </p>}
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => <div key={index} className={`bg-white rounded-xl overflow-hidden border ${plan.highlight ? 'border-blue-500 shadow-lg' : 'border-gray-200'}`}>
+          {plans.map((plan, index) => <div key={index} className={`bg-white rounded-xl overflow-hidden border animate-fade-in-up hover:transform hover:scale-105 transition-all duration-300 ${plan.highlight ? 'border-blue-500 shadow-lg' : 'border-gray-200 hover:shadow-lg'}`} style={{animationDelay: `${index * 0.2}s`}}>
               {plan.highlight && <div className="bg-blue-500 text-white text-center py-2 text-sm font-medium">
                   MOST POPULAR
                 </div>}
@@ -69,7 +69,7 @@ export function PricingSection() {
                       {plan.price}
                     </div>}
                 </div>
-                <button className={`w-full py-3 rounded-lg font-medium ${plan.highlight ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`}>
+                <button className={`w-full py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg ${plan.highlight ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`}>
                   {plan.cta}
                 </button>
               </div>

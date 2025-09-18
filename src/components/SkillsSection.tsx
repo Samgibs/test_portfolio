@@ -75,23 +75,23 @@ export function SkillsSection() {
   }];
   return <section id="skills" className="py-20 bg-gray-50 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Technical Skills
           </h2>
-          <div className="h-1 w-20 bg-green-600 mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-green-600 mx-auto mb-6 animate-expand-width"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             My expertise in Android development spans across various
             technologies and frameworks.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          {skills.map((skillGroup, index) => <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+          {skills.map((skillGroup, index) => <div key={index} className="bg-white p-6 rounded-xl shadow-sm animate-fade-in-up hover:transform hover:scale-105 transition-all duration-300" style={{animationDelay: `${index * 0.2}s`}}>
               <h3 className="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
                 {skillGroup.category}
               </h3>
               <div className="space-y-6">
-                {skillGroup.items.map((skill, idx) => <div key={idx}>
+                {skillGroup.items.map((skill, idx) => <div key={idx} className="animate-fade-in-up" style={{animationDelay: `${(index * 0.2) + (idx * 0.1)}s`}}>
                     <div className="flex justify-between mb-1">
                       <span className="font-medium text-gray-700">
                         {skill.name}
@@ -101,20 +101,21 @@ export function SkillsSection() {
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{
-                  width: `${skill.level}%`
+                      <div className="bg-green-600 h-2 rounded-full animate-progress-bar" style={{
+                  width: `${skill.level}%`,
+                  animationDelay: `${(index * 0.2) + (idx * 0.1) + 0.5}s`
                 }}></div>
                     </div>
                   </div>)}
               </div>
             </div>)}
         </div>
-        <div className="mt-16 bg-white rounded-xl p-8 shadow-sm">
+        <div className="mt-16 bg-white rounded-xl p-8 shadow-sm animate-fade-in-up hover:transform hover:scale-105 transition-all duration-300" style={{animationDelay: '1s'}}>
           <h3 className="text-xl font-bold text-gray-900 mb-6">
             Additional Skills & Tools
           </h3>
           <div className="flex flex-wrap gap-3">
-            {['RESTful APIs', 'GraphQL', 'JSON/XML Parsing', 'Offline Caching', 'Background Processing', 'Push Notifications', 'Location Services', 'Camera & Media', 'Bluetooth', 'Material Design 3', 'Responsive Layouts', 'Performance Optimization', 'Memory Management', 'Google Play Console', 'App Bundles', 'In-App Purchases', 'App Security', 'Analytics'].map(skill => <span key={skill} className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">
+            {['RESTful APIs', 'GraphQL', 'JSON/XML Parsing', 'Offline Caching', 'Background Processing', 'Push Notifications', 'Location Services', 'Camera & Media', 'Bluetooth', 'Material Design 3', 'Responsive Layouts', 'Performance Optimization', 'Memory Management', 'Google Play Console', 'App Bundles', 'In-App Purchases', 'App Security', 'Analytics'].map((skill, idx) => <span key={skill} className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm hover:bg-green-100 hover:text-green-800 transition-all duration-300 animate-fade-in-up hover:scale-110" style={{animationDelay: `${1.2 + (idx * 0.05)}s`}}>
                 {skill}
               </span>)}
           </div>
