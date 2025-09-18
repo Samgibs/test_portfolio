@@ -21,7 +21,7 @@ export function Header() {
             <div className="flex items-center">
               <div className="h-8 w-8 text-green-600" />
               <span className="ml-2 text-xl font-bold text-gray-900">
-                Alex Johnson
+                Samuel Gichohi
               </span>
             </div>
             {/* Desktop menu */}
@@ -103,7 +103,7 @@ export function Header() {
                   Android SDK
                 </div>
                 <div className="text-2xl font-bold text-green-600">
-                  5+ Years
+                  2.5+ Years
                 </div>
               </div>
             </div>

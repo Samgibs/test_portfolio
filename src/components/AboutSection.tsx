@@ -13,7 +13,7 @@ export function AboutSection() {
           <div className="md:w-1/3 mb-10 md:mb-0">
             <div className="relative">
               <div className="aspect-square overflow-hidden rounded-2xl shadow-lg">
-                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Alex Johnson" className="w-full h-full object-cover" />
+                <img src="/images/portimage.jpg" alt="Samuel Gichohi" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-green-600 rounded-full p-5">
                 <div className="h-8 w-8 text-white" />
@@ -22,7 +22,7 @@ export function AboutSection() {
           </div>
           <div className="md:w-2/3">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Alex Johnson
+              Samuel Gichohi
             </h3>
             <h4 className="text-xl text-green-600 mb-6">
               Senior Android Developer

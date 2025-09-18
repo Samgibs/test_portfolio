@@ -7,7 +7,7 @@ export function FooterSection() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
             <div className="h-8 w-8 text-green-500" />
-            <span className="ml-2 text-xl font-bold">Alex Johnson</span>
+            <span className="ml-2 text-xl font-bold">Samuel Gichohi</span>
           </div>
           <div className="flex space-x-8 mb-6 md:mb-0">
             <a href="#about" className="text-gray-400 hover:text-white">
@@ -40,7 +40,7 @@ export function FooterSection() {
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Alex Johnson. All rights reserved.
+            © {currentYear} Samuel Gichohi. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm mt-2 md:mt-0">
             Android Developer Portfolio
